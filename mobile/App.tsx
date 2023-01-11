@@ -2,7 +2,7 @@ import { Roboto_400Regular, Roboto_500Medium, Roboto_700Bold, useFonts } from '@
 import { NativeBaseProvider, StatusBar } from 'native-base';
 import { Loading } from './src/components/Loading';
 import { AuthContextProvider } from './src/Context/AuthContext';
-import { SingIn } from './src/screens/SignIn';
+import { New } from './src/screens/New';
 import { THEME } from './src/styles/theme';
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
         />
 
         {
-          fontsLoaded ? <SingIn /> : <Loading />
+          fontsLoaded ? <New /> : <Loading />
         }
       </AuthContextProvider>
     </NativeBaseProvider>
