@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@fastify/cors": "^8.1.1",
+    "@fastify/jwt": "^6.5.0",
     "@prisma/client": "^4.6.1",
     "fastify": "^4.9.2",
     "prisma-erd-generator": "^1.2.2",
