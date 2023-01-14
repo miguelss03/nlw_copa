@@ -3,10 +3,19 @@
 import { FastifyInstance } from "fastify"
 import { z } from "zod"
 import { prisma } from "../lib/prisma"
+import { authenticate } from "../plugins/authenticate"
 
 ///ESTUDAR SOBRE REFRESH TOKEN
 export async function authRoutes(fastify: FastifyInstance) {
-    fastify.post('/users', async (req, res) => {
+
+    fastify.get('/me', {
+        onRequest: [authenticate],
+    }, async (req) => {
+        return { user: req.user }
+    })
+
+
+    fastify.post('/users', async (req) => {
         const createUserBody = z.object({
             acess_token: z.string(),
         })
