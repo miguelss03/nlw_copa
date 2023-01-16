@@ -50,8 +50,6 @@ export async function poolRoutes(fastify: FastifyInstance) {
             });
         }
 
-
-
         return reply.status(201).send({ code });
     });
 
